@@ -10,6 +10,7 @@ int main()
     cin >> a >> b;
     c = a + b;
     
+    //若c为为负数，为了方便起见在之前先将其变成正的，并且用flag变量输出负号
     if(c < 0){
         flag = 1;
         c = -c;
@@ -22,6 +23,7 @@ int main()
     if(flag == 1)
         printf("-"); 
     
+    //若剩余六位数或者三位数，且不是第一个字符，则应该加逗号
     while(restlen!=0)
     {
         if(restlen==6&&restlen!=slen||restlen==3&&restlen!=slen)

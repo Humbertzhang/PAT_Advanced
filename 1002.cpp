@@ -16,6 +16,7 @@ struct  part{
     }
 };
 
+//按指数从大到小排列
 bool compare(struct part a, struct part b)
 {
     return a.exponents > b.exponents;
@@ -39,6 +40,7 @@ int main()
     int count = 0;
     for(int j=0;j<K1;j++){
         for(int k=0;k<K2;k++){
+            //双重循环先找到相等的那些，加起来赋值给part3,并将之前的变成-1,在下面记录 系数没变成-1的，即在两个部分中没有相同系数的单向式。
             if(part1[j].exponents == part2[k].exponents && part1[j].exponents !=-1 && part2[k].exponents!= -1){
                 part3[count].exponents=part1[j].exponents;
                 part3[count++].coefficients = part1[j].coefficients + part2[k].coefficients;
